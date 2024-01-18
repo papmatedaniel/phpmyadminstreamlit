@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Specify the path to the secrets.toml file
+# Specify the absolute path to the secrets.toml file
 secrets_path = "/workspaces/phpmyadminstreamlit/.streamlit/secrets.toml"
 
 # Load database configuration from secrets.toml
@@ -15,3 +15,4 @@ df = conn.query('SELECT * from mytable;', ttl=600)
 # Display the results
 for row in df.itertuples():
     st.write(f"{row.name} has a :{row.pet}:")
+
